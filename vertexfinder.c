@@ -4,16 +4,21 @@
 
 float findVX(float a, float b) {
   float vx = -b / (2 * a);
-  return vx;
+  if (vx == 0){
+    return 0;
+  }
+  else {
+    return vx;
+  }
 }
 
-float findVY(float a, float b, float c, float vx) {
-  float vy = (a * vx * vx) + (b * vx) + c;
-  return vy;
+float findY(float a, float b, float c, float x) {
+  float y = (a * x * x) + (b * x) + c;
+  return y;
 }
 
-void printvform(float a,float vx,float vy) {
-  //printf("The vertex form is %f(x-%f)+%f\n",a,vx,vy);
+void printvform(float a,float vx,float y) {
+  //printf("The vertex form is %f(x-%f)+%f\n",a,vx,y);
   printf("The vertex form is ");
   if (a != 1) {
       printf("%f",a);  
@@ -26,18 +31,18 @@ void printvform(float a,float vx,float vy) {
       printf("+%f",tmp);
     }
     printf(")^2");
-    if (vy > 0) {
-      printf("+%f\n",vy);
+    if (y > 0) {
+      printf("+%f\n",y);
     }
-    else if (vy < 0) {
-      printf("%f\n",vy);
+    else if (y < 0) {
+      printf("%f\n",y);
     }
     else {
       printf("\n");
     }
   }
   else {
-    float tmp = vx + vy;
+    float tmp = vx + y;
     if (tmp > 0) {
       printf("x^2+%f\n",tmp);
     }
@@ -51,11 +56,23 @@ void printvform(float a,float vx,float vy) {
   }
 }
 
-void doall (float a, float b, float c) {
+void rpoints(float vx, float a, float b, float c) {
+  printf("Some points near the vertex are: \n");
+  float tempx;
+  float tempy;
+  for (int i = -3; i <= 3; i++) {
+    tempx = vx + i;
+    tempy = findY(a,b,c,tempx);
+    printf("(%f, %f)\n",tempx,tempy);
+  }
+}
+
+void doVertex (float a, float b, float c) {
   float vx = findVX(a,b);
-  float vy = findVY(a,b,c,vx);
-  printf("The vertex is (%f,%f)\n", vx, vy);
+  float vy = findY(a,b,c,vx);
+  printf("The vertex is (%f, %f)\n", vx, vy);
   printvform(a,vx,vy);
+  rpoints(vx,a,b,c);
 }
 
 int main (int argc, char* argv[]) {
@@ -69,7 +86,7 @@ int main (int argc, char* argv[]) {
       return 0;
     }
     
-    doall(a,b,c);
+    doVertex(a,b,c);
     return 0;
     
   }
