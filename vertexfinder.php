@@ -1,3 +1,4 @@
+  GNU nano 3.2                                                                                                                                                                  vertexfinder.php                                                                                                                                                                             
 
 <!DOCTYPE html>
 <html>
@@ -18,7 +19,7 @@
          $arg1 = test_input($_POST["arg1"]);
          $arg2 = test_input($_POST["arg2"]);
          $arg3 = test_input($_POST["arg3"]);
-         exec("/usr/lib/cgi-bin/pi/argtest2 " . $arg1 . " " . $arg2 . " " . $arg3, $output, $retc); 
+        exec("/usr/lib/cgi-bin/sp1b/vertexfinder " . $arg1 . " " . $arg2 . " " . $arg3, $output, $retc); 
        }
 
        function test_input($data) {
@@ -30,9 +31,9 @@
     ?>
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-      Arg1: <input type="text" name="arg1"><br>
-      Arg2: <input type="text" name="arg2"><br>
-      Arg2: <input type="text" name="arg2"><br>
+      A: <input type="text" name="arg1"><br>
+      B: <input type="text" name="arg2"><br>
+      C: <input type="text" name="arg3"><br>
       <br>
       <input type="submit" value="Go!">
     </form>
@@ -45,7 +46,7 @@
          echo "<br>";
          echo $arg2;
          echo "<br>";
-         echo $arg2;
+         echo $arg3;
          echo "<br>";
 
          echo "<h2>Program Output (an array):</h2>";
@@ -61,3 +62,4 @@
 
   </body>
 </html>
+
