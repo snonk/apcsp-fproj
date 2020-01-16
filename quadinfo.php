@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Quadratic Information</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
 
@@ -17,7 +18,7 @@
          $arg1 = test_input($_POST["arg1"]);
          $arg2 = test_input($_POST["arg2"]);
          $arg3 = test_input($_POST["arg3"]);
-        exec("/usr/lib/cgi-bin/sp1b/quadinfo " . $arg1 . " " . $arg2 . " " . $arg3, $output, $retc); 
+        exec("/usr/lib/cgi-bin/sp1a/quadinfo " . $arg1 . " " . $arg2 . " " . $arg3, $output, $retc); 
        }
 
        function test_input($data) {
