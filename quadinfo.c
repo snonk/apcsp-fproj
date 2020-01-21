@@ -25,41 +25,25 @@ double findY(double a, double b, double c, double x) {
 }
 
 void printvform(double a,double vx,double y) {
-  //printf("The vertex form is %f(x-%f)+%f\n",a,vx,y);
   printf("The vertex form is ");
-  if (a != 1) {
-      printf("%f",a);  
-      printf("(x");
-    if (vx > 0) {
-      printf("-%f",vx);
-    }
-    else if (vx < 0) {
-      double tmp = vx * -1;      
-      printf("+%f",tmp);
-    }
-    printf(")^2");
-    if (y > 0) {
-      printf("+%f\n",y);
-    }
-    else if (y < 0) {
-      printf("%f\n",y);
-    }
-    else {
-      printf("\n");
-    }
+  printf("%f",a);  
+  printf("(x");
+  if (vx > 0) {
+    printf("-%f",vx);
+  }
+  else if (vx < 0) {
+    double tmp = vx * -1;      
+    printf("+%f",tmp);
+  }
+  printf(")^2");
+  if (y > 0) {
+    printf("+%f\n",y);
+  }
+  else if (y < 0) {
+    printf("%f\n",y);
   }
   else {
-    double tmp = vx + y;
-    if (tmp > 0) {
-      printf("x^2+%f\n",tmp);
-    }
-    else if (tmp < 0) {
-      printf("x^2%f\n",tmp);
-    }
-    else {
-      printf("x^2\n");
-    }
-    //printf("");
+    printf("\n");
   }
 }
 
