@@ -26,7 +26,9 @@ double findY(double a, double b, double c, double x) {
 
 void printvform(double a,double vx,double y) {
   printf("The vertex form is ");
-  printf("%f",a);  
+  if (a != 1) {
+    printf("%f",a);
+  }    
   printf("(x");
   if (vx > 0) {
     printf("-%f",vx);
