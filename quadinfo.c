@@ -135,12 +135,12 @@ struct funcroots getroot(double a, double b, double c){
 
       printf("Root 1: ");
         for (double i=func.root1-2; i<=func.root1+2; i++){
-          printf("(%f, %f)", i, a*i*i+b*i+c);
+          printf("(%f, %f)   ", i, a*i*i+b*i+c);
         }
       if(func.root1 != func.root2){
         printf("\nRoot 2: ");
         for (double i=func.root2-2; i<=func.root2+2; i++){
-          printf("(%f, %f)", i, a*i*i+b*i+c);
+          printf("(%f, %f)   ", i, a*i*i+b*i+c);
         }
       }  
     }
