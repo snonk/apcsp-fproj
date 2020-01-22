@@ -70,7 +70,7 @@ void doVertex (double a, double b, double c) {
     rpoints(vx,a,b,c);
   }
   else {
-    printf("There equation entered is not a quadratic equation, so there is no vertex.");
+    printf("The equation entered is not a quadratic equation, so there is no vertex.");
   }
 }
 
