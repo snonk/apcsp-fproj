@@ -80,13 +80,18 @@ struct funcroots getroot(double a, double b, double c){
 
     //If function is linear:
     if (a == 0){
-      func.root1 = -c/b;
-      printf("First Root: %f\n", func.root1);
-      if (b >= 0) {
-        printf("Quadratic in factored form: %fx + %f", b, c);
+      if (b!=0){
+        func.root1 = -c/b;
+        printf("First Root: %f\n", func.root1);
+        if (b > 0) {
+          printf("Quadratic in factored form: %fx + %f", b, c);
+        }
+        else if (b<0) {
+          printf("Quadratic in factored form: %fx - %f", b, -c);
+        }
       }
       else{
-        printf("Quadratic in factored form: %fx - %f", b, -c);
+        printf("Function is horizontal line: %f", c);
       }
     }
 
