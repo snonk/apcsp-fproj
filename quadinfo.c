@@ -61,12 +61,17 @@ void rpoints(double vx, double a, double b, double c) {
 }
 
 void doVertex (double a, double b, double c) {
-  double vx = findVX(a,b);
-  double vy = findY(a,b,c,vx);
-  printf("The vertex is (%f, %f)\n\n", vx, vy);
-  printvform(a,vx,vy);
-  printf("\n");
-  rpoints(vx,a,b,c);
+  if (a != 0){
+    double vx = findVX(a,b);
+    double vy = findY(a,b,c,vx);
+    printf("The vertex is (%f, %f)\n\n", vx, vy);
+    printvform(a,vx,vy);
+    printf("\n");
+    rpoints(vx,a,b,c);
+  }
+  else {
+    printf("There equation entered is not a quadratic equation, so there is no vertex.");
+  }
 }
 
 struct funcroots getroot(double a, double b, double c){
